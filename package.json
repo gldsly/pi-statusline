@@ -1,16 +1,39 @@
 {
   "name": "pi-statusline",
-  "version": "0.1.0",
-  "description": "Claude Code-compatible command-driven statusline extension for pi",
+  "version": "0.0.1",
+  "description": "Claude Code-compatible command-driven statusline extension for the Pi coding agent",
   "type": "module",
-  "private": true,
-  "license": "MIT",
   "keywords": [
+    "pi-package",
     "pi",
+    "pi-coding-agent",
+    "extension",
     "statusline",
+    "footer",
+    "widget",
     "claude-code",
-    "extension"
+    "claude-code-statusline"
   ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsingjui/pi-statusline.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hsingjui/pi-statusline/issues"
+  },
+  "homepage": "https://github.com/hsingjui/pi-statusline#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "README.zh-CN.md"
+  ],
+  "exports": {
+    "./package.json": "./package.json"
+  },
   "engines": {
     "node": ">=20"
   },
