@@ -1,0 +1,33 @@
+{
+  "name": "pi-statusline",
+  "version": "0.1.0",
+  "description": "Claude Code-compatible command-driven statusline extension for pi",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "keywords": [
+    "pi",
+    "statusline",
+    "claude-code",
+    "extension"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  },
+  "scripts": {
+    "check": "node --eval \"console.log('No build step required; pi loads TypeScript via jiti.')\"",
+    "test": "node --experimental-strip-types --import ./test/register-ts-loader.mjs --test --test-concurrency=1 test/*.test.ts",
+    "test:perf": "node --experimental-strip-types --import ./test/register-ts-loader.mjs --test --test-concurrency=1 test/performance.test.ts"
+  }
+}
