@@ -10,6 +10,7 @@ interface RenderState {
   placement: "footer" | "widget";
   padding: number;
   widgetPlacement: "aboveEditor" | "belowEditor";
+  wrap: boolean;
   lines: string[];
 }
 
@@ -19,6 +20,7 @@ function isSameRenderState(previous: RenderState | null, next: RenderState): boo
   if (previous.placement !== next.placement) return false;
   if (previous.padding !== next.padding) return false;
   if (previous.widgetPlacement !== next.widgetPlacement) return false;
+  if (previous.wrap !== next.wrap) return false;
   if (previous.lines.length !== next.lines.length) return false;
 
   for (let i = 0; i < previous.lines.length; i++) {
@@ -74,6 +76,7 @@ export default function (pi: ExtensionAPI) {
       placement: config.placement ?? "footer",
       padding: config.padding ?? 0,
       widgetPlacement: config.widgetPlacement ?? "belowEditor",
+      wrap: config.wrap !== false,
       lines,
     };
 

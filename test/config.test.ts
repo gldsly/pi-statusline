@@ -51,6 +51,7 @@ test("readStatusLineConfig 合并全局与项目配置，并规范化数值字�
       widgetPlacement: "aboveEditor",
       debounceMs: 120,
       timeoutMs: 5000,
+      wrap: true,
     });
 
     clearConfigCache(projectDir);

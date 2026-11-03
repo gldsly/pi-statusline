@@ -75,6 +75,22 @@ Defaults:
 - `widgetPlacement`: `belowEditor`
 - `debounceMs`: `300`
 - `timeoutMs`: optional, disabled by default
+- `wrap`: `true`
+
+## Long output and narrow terminals
+
+When the statusline output is wider than the terminal (for example after splitting panes, or in a
+small window), the footer **wraps** it onto extra rows instead of silently truncating it:
+
+- breaks happen at spaces first, so fields stay intact as long as possible;
+- continuation rows are indented by two spaces and keep the active colours;
+- at most four rows are produced, so a very narrow terminal cannot push the footer off the screen;
+- rows are still clamped to the terminal width, so the TUI never sees an over-wide line.
+
+Wrapping uses the width reported at render time, so resizing the terminal or dragging a split takes
+effect immediately without re-running the statusline command.
+
+Set `wrap: false` to get the old single-row behaviour (truncate at the terminal width).
 
 ## Refresh model
 

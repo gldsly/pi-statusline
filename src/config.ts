@@ -68,6 +68,7 @@ export function readStatusLineConfig(cwd: string): StatusLineCommandConfig | nul
           widgetPlacement: merged.widgetPlacement ?? "belowEditor",
           debounceMs: normalizeOptionalNumber(merged.debounceMs) ?? 300,
           timeoutMs: normalizeOptionalNumber(merged.timeoutMs),
+          wrap: merged.wrap !== false,
         };
 
   configCache.set(cwd, value);

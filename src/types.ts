@@ -8,6 +8,8 @@ export interface StatusLineCommandConfig {
   widgetPlacement?: "aboveEditor" | "belowEditor";
   debounceMs?: number;
   timeoutMs?: number;
+  /** Wrap long output onto extra footer rows instead of truncating it. Defaults to `true`. */
+  wrap?: boolean;
 }
 
 export interface StatusLineSettings {
